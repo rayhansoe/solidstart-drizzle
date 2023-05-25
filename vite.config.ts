@@ -3,8 +3,10 @@ import vercel from "solid-start-vercel";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-	plugins: [solid({
-		adapter: vercel({edge: true})
-	})],
+	plugins: [
+		solid({
+			adapter: vercel({ edge: false }),
+		}),
+	],
 	ssr: { external: ["better-sqlite3"] },
 });
